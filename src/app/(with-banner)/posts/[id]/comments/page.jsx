@@ -1,4 +1,6 @@
+
 import { resolve } from "styled-jsx/css";
+import Image from "next/image"
 
 const fetchComments = async (id) => {
   //await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -17,6 +19,7 @@ export default async function Post({ params }) {
       <ul>
         {Comments.map((comment) => (
           <li key={comment.id}>
+            <Image width="50" height="50" src={`https://i.pravatar.cc/300`} alt={comment.name} />
             <h4>{comment.name}</h4>
             <h4>{comment.email}</h4>
             <small>{comment.body}</small>
